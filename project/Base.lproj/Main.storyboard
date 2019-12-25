@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="R9o-Op-d8g">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tipping Calculator-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TippingCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="110" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgm-Iv-fyE">
+                                <rect key="frame" x="236" y="408" width="149" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="mtW-j4-TEj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip Amount: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIT-a6-gJc">
+                                <rect key="frame" x="20" y="264" width="153.5" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.10" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TM1-vX-h84">
+                                <rect key="frame" x="236" y="270.5" width="105" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Zwn-Cd-xG5">
+                                <rect key="frame" x="0.0" y="340" width="414" height="32"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <segments>
+                                    <segment title="15%"/>
+                                    <segment title="18%"/>
+                                    <segment title="20%"/>
+                                </segments>
+                                <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="valueChanged" id="fKp-pd-rto"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Billing Amount: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YpN-p6-72d">
+                                <rect key="frame" x="20" y="160" width="187.5" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAa-uZ-xz1">
+                                <rect key="frame" x="26" y="408" width="175.5" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="100" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vqx-xV-2mK">
+                                <rect key="frame" x="236" y="164" width="59" height="25.5"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="59" id="PD1-q1-cnE"/>
+                                </constraints>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" keyboardAppearance="alert"/>
+                                <connections>
+                                    <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="editingChanged" id="VP0-Az-gMv"/>
+                                    <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="valueChanged" id="ZSn-oK-wGt"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.9221343994140625" green="0.8253326416015625" blue="0.76830291748046875" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vqx-xV-2mK" secondAttribute="trailing" constant="119" id="3FF-1Y-0YA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lgm-Iv-fyE" secondAttribute="bottom" constant="416" id="3xP-Nj-Yw5"/>
+                            <constraint firstItem="TM1-vX-h84" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tIT-a6-gJc" secondAttribute="trailing" constant="8" symbolic="YES" id="83X-kR-NA8"/>
+                            <constraint firstItem="Zwn-Cd-xG5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CwO-WC-yRR"/>
+                            <constraint firstItem="Zwn-Cd-xG5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="F91-hJ-RhT"/>
+                            <constraint firstItem="fAa-uZ-xz1" firstAttribute="centerX" secondItem="YpN-p6-72d" secondAttribute="centerX" id="FyI-NG-n5M"/>
+                            <constraint firstItem="vqx-xV-2mK" firstAttribute="centerX" secondItem="lgm-Iv-fyE" secondAttribute="centerX" constant="-45" id="MhV-jV-c9f"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fAa-uZ-xz1" secondAttribute="bottom" constant="418" id="NVO-8I-MLG"/>
+                            <constraint firstItem="YpN-p6-72d" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="72" id="SoG-bf-oYD"/>
+                            <constraint firstItem="lgm-Iv-fyE" firstAttribute="top" secondItem="Zwn-Cd-xG5" secondAttribute="bottom" constant="37" id="TJa-gy-vRN"/>
+                            <constraint firstItem="vqx-xV-2mK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="YpN-p6-72d" secondAttribute="trailing" constant="8" symbolic="YES" id="Ux5-ke-GBv"/>
+                            <constraint firstItem="lgm-Iv-fyE" firstAttribute="top" secondItem="fAa-uZ-xz1" secondAttribute="top" id="VLh-pV-Wgw"/>
+                            <constraint firstItem="fAa-uZ-xz1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="26" id="a4T-gx-Sca"/>
+                            <constraint firstItem="lgm-Iv-fyE" firstAttribute="trailing" secondItem="TM1-vX-h84" secondAttribute="trailing" constant="44" id="cug-th-R4J"/>
+                            <constraint firstItem="vqx-xV-2mK" firstAttribute="centerX" secondItem="TM1-vX-h84" secondAttribute="centerX" constant="-23" id="nLs-Ii-7T2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lgm-Iv-fyE" secondAttribute="trailing" constant="29" id="nVl-lj-04I"/>
+                            <constraint firstItem="tIT-a6-gJc" firstAttribute="top" secondItem="YpN-p6-72d" secondAttribute="bottom" constant="70.5" id="oLa-DM-acl"/>
+                            <constraint firstItem="TM1-vX-h84" firstAttribute="top" secondItem="vqx-xV-2mK" secondAttribute="bottom" constant="81" id="r4h-au-ZB5"/>
+                            <constraint firstItem="YpN-p6-72d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="vEh-3b-57S"/>
+                            <constraint firstItem="YpN-p6-72d" firstAttribute="bottom" secondItem="vqx-xV-2mK" secondAttribute="bottom" constant="4" id="yiY-rw-i5G"/>
+                            <constraint firstItem="YpN-p6-72d" firstAttribute="leading" secondItem="tIT-a6-gJc" secondAttribute="leading" id="zcI-iH-1fM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="N6t-LF-MOh" appends="YES" id="ejZ-eb-quy"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tipping Calculator" id="Qev-NR-L1z" colorLabel="IBBuiltInLabel-Gray"/>
+                    <connections>
+                        <outlet property="bill" destination="vqx-xV-2mK" id="QLc-2S-04d"/>
+                        <outlet property="tip" destination="TM1-vX-h84" id="td6-sX-wqb"/>
+                        <outlet property="tipControl" destination="Zwn-Cd-xG5" id="qA4-fI-97x"/>
+                        <outlet property="total" destination="lgm-Iv-fyE" id="wDZ-AA-s6K"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="N6t-LF-MOh">
+                    <connections>
+                        <action selector="onTap:" destination="BYZ-38-t0r" id="OZY-E1-9RV"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="116.51785714285714"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pfp-9z-FKX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="R9o-Op-d8g" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="R5y-Od-pUf">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="pWa-LG-XdH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tWO-0j-NJL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="116.51785714285714"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+</document>
